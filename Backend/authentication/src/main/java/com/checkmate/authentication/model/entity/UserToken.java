@@ -11,6 +11,7 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name = "user_tokens")
+// update entity
 public class UserToken {
     public enum TokenType {
         ACCESS, REFRESH, TFA
