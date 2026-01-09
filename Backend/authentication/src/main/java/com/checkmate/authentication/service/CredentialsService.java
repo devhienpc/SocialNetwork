@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class CredentialsService {
-
+    // Config access token
     private static final long ACCESS_TOKEN_EXPIRY_TIME = TimeUnit.HOURS.toMillis(1);
     private static final long REFRESH_TOKEN_EXPIRY_TIME= TimeUnit.DAYS.toMillis(14);
 
