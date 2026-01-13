@@ -1,0 +1,22 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka
+  instance:
+    hostname: gateway
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+# rest of the configuration
+
+server:
+  port: 8080
