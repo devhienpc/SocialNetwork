@@ -12,7 +12,6 @@ player_name = ""
 room_id = ""
 can_play = False
 
-
 def receive():
     global can_play
     while True:
@@ -40,6 +39,7 @@ def receive():
 
         except:
             break
+
 
 
 def connect_server():
