@@ -13,7 +13,33 @@ room_id = ""
 can_play = False
 
 
+def receive():
+    global can_play
+    while True:
+        try:
+            msg = client.recv(1024).decode()
+            if not msg:
+                break
 
+            if "Nhập tên" in msg:
+                client.send((player_name + "\n").encode())
+                continue
+
+            if "Nhập số phòng" in msg:
+                client.send((room_id + "\n").encode())
+                continue
+
+            if msg.startswith("\n--- ROUND"):
+                can_play = True
+                enable_buttons(True)
+
+            text_area.config(state="normal")
+            text_area.insert(tk.END, msg)
+            text_area.see(tk.END)
+            text_area.config(state="disabled")
+
+        except:
+            break
 
 
 def connect_server():
